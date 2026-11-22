@@ -1,0 +1,11 @@
+# 비밀값: 절대 커밋하지 않음
+.env
+.env.local
+.env.*.local
+
+node_modules/
+.claude/settings.local.json
+
+# 이 앱과 무관한 폴더
+web-crawler/
+실습A,B/

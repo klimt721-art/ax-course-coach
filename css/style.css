@@ -1,0 +1,57 @@
+:root {
+  --bg: #f5f7fa; --surface: #fff; --text: #1d2733; --muted: #5d6b7a;
+  --line: #dde3ea; --primary: #1b6ec2; --primary-dark: #14558f; --primary-soft: #e6f0fa;
+  --ok: #17794a; --ok-soft: #e4f5ec; --bad: #b3261e; --bad-soft: #fbe9e7;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #12171d; --surface: #1b222b; --text: #e8edf2; --muted: #9aa8b6;
+    --line: #2d3742; --primary: #5aa5ea; --primary-dark: #8cc2f5; --primary-soft: #1d3248;
+    --ok: #5fd39a; --ok-soft: #163226; --bad: #ff8a80; --bad-soft: #3a1d1b;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 system-ui, "Malgun Gothic", sans-serif; }
+.app-header { position: sticky; top: 0; z-index: 5; background: var(--surface); border-bottom: 1px solid var(--line); padding: 0 16px; }
+.brand { background: none; border: 0; color: var(--text); font-weight: 700; font-size: 1.05rem; padding: 14px 0; cursor: pointer; }
+main { max-width: 640px; margin: 0 auto; padding: 20px 16px 48px; }
+h1 { font-size: 1.4rem; margin: 0 0 4px; line-height: 1.35; }
+h2 { font-size: 1.1rem; margin: 24px 0 8px; }
+.sub { color: var(--muted); margin: 0 0 16px; font-size: .95rem; }
+.cards { display: grid; gap: 12px; }
+.card { display: block; width: 100%; text-align: left; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px; color: inherit; font: inherit; cursor: pointer; min-height: 48px; }
+.card:hover, .card:focus-visible { border-color: var(--primary); }
+.card .t { font-weight: 700; display: block; }
+.card .o { color: var(--muted); font-size: .9rem; display: block; margin-top: 2px; }
+.tag { display: inline-block; font-size: .78rem; padding: 1px 8px; border-radius: 999px; background: var(--primary-soft); color: var(--primary-dark); margin-bottom: 6px; }
+.tag.adv { background: #fdf0d9; color: #8a5a00; }
+@media (prefers-color-scheme: dark) { .tag.adv { background: #3a2c10; color: #f3c46a; } }
+.done { float: right; font-size: .85rem; color: var(--ok); font-weight: 600; }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px; margin-bottom: 12px; }
+.panel p { margin: 0; }
+.example { margin-top: 8px !important; color: var(--muted); font-size: .95rem; padding-left: 10px; border-left: 3px solid var(--line); }
+.btn { display: block; width: 100%; min-height: 48px; padding: 12px 16px; border-radius: 10px; border: 1px solid var(--primary); background: var(--primary); color: #fff; font: inherit; font-weight: 600; cursor: pointer; margin-top: 12px; }
+.btn:disabled { opacity: .45; cursor: not-allowed; }
+.btn.secondary { background: var(--surface); color: var(--primary-dark); }
+.row { display: flex; gap: 8px; }
+.row .btn { flex: 1; }
+.progress { height: 6px; background: var(--line); border-radius: 3px; margin: 8px 0 16px; overflow: hidden; }
+.progress > i { display: block; height: 100%; background: var(--primary); }
+.q { font-size: 1.1rem; font-weight: 700; margin: 0 0 12px; }
+.opts { display: grid; gap: 10px; }
+.opt { text-align: left; width: 100%; min-height: 52px; padding: 12px 14px; border-radius: 10px; border: 2px solid var(--line); background: var(--surface); color: inherit; font: inherit; cursor: pointer; }
+.opt[aria-pressed="true"] { border-color: var(--primary); background: var(--primary-soft); }
+.score { text-align: center; padding: 20px 16px; }
+.score .n { font-size: 2.6rem; font-weight: 800; line-height: 1.1; }
+.score .d { color: var(--muted); }
+.fb { background: var(--primary-soft); border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
+.fb b { display: block; }
+.rv { border-left: 5px solid var(--line); }
+.rv.ok { border-left-color: var(--ok); }
+.rv.bad { border-left-color: var(--bad); }
+.rv .res { font-weight: 700; }
+.rv.ok .res { color: var(--ok); }
+.rv.bad .res { color: var(--bad); }
+.rv .ex { margin-top: 8px; padding: 8px 10px; background: var(--bg); border-radius: 8px; font-size: .95rem; }
+.err { background: var(--bad-soft); color: var(--bad); padding: 14px; border-radius: 10px; }
+:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
