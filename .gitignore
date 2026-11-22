@@ -10,3 +10,6 @@ node_modules/
 web-crawler/
 실습A,B/
 .next/
+
+# 빌드 결과물
+dist/
